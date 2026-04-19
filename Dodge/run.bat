@@ -1,6 +1,6 @@
 @echo off
 
-START /MIN CMD.EXE /C powershell -ExecutionPolicy Bypass -File ".\compile-game.ps1"
-game-launcher.bat # For launching the game without a cmd window.
+START /WAIT /MIN CMD.EXE /C powershell -ExecutionPolicy Bypass -File ".\compile-game.ps1"
+call game-launcher.bat REM For launching the game without a cmd window.
 
 pause

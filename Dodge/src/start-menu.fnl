@@ -22,7 +22,9 @@
   (spr 21 (- 15 32) (+ 35 32) 0 8)
   (spr 22 (+ 15 32) (+ 35 32) 0 8)
   (spr 1 15 35 0 8)
-  (spr 33 165 35 0 8))
+  (spr 33 165 35 0 8)
+  
+  (render-input))
 
 (fn manage-start-menu [] ; State 0. Start menu.
   (render-start-menu)

@@ -1,5 +1,5 @@
 (global state 0) ; 0: start, 1: playing, 2: game over.
-(global best-score 0)
+(global best-score []) ; {pseudo, best_score}
 (global player-x (- 120 4))
 (global player-y (- 68 4))
 (global player-sprite 1)
@@ -40,7 +40,7 @@
 (var couleur-texte 12)  ; 6 = vert. Essaie 11 (bleu clair)
 
 (fn restart-game []
-    (set best-score 0)
+    (set best-score [])
     (set player-x 120)
     (set player-y 68)
     (set player-sprite 1)

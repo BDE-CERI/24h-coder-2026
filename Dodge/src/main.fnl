@@ -21,6 +21,7 @@
 
 <import music.fnl>
 <import state-manager.fnl>
+<import handle-input.fnl>
 <import start-menu.fnl>
 
 (fn detecte-oob [x y min-x max-x min-y max-y]
