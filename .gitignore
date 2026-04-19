@@ -36,7 +36,7 @@ desktop.ini
 .local/
 
 # QBitSoft
-'Dodge! (QBitSoft)'/src/main_.fnl
+Dodge/src/main_.fnl
 
 */.git/
 
