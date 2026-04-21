@@ -9,33 +9,40 @@ export function GamePage() {
 
   if (!game) {
     return (
-      <div>
-        <Link to="/" className="back-link">← Retour à la galerie</Link>
-        <p>Jeu introuvable : <code>{id}</code>.</p>
+      <div className="game-detail">
+        <Link to="/" className="back-link">← Retour à l'arcade</Link>
+        <p>Borne introuvable : <code>{id}</code>.</p>
       </div>
     );
   }
 
   return (
-    <div>
-      <Link to="/" className="back-link">← Retour à la galerie</Link>
+    <div className="game-detail">
+      <Link to="/" className="back-link">← Retour à l'arcade</Link>
       <div className="game-page">
-        <div>
+        <div className="game-page-player">
           <div className="mobile-warning">
             🎮 Clavier requis — ce jeu n'a pas de contrôles tactiles. Jouez sur desktop.
           </div>
           <PlayerFrame slug={game.id} title={game.title} />
         </div>
-        <aside>
-          <h1>{game.title}</h1>
+        <aside className="cabinet-card">
           {game.award && (
             <span className={`game-badge game-badge--${game.award}`}>
-              {game.award === "jury" ? "🏆 Prix du jury" : "❤️ Coup de cœur du public"}
+              {game.award === "jury" ? "★ PRIX DU JURY" : "♥ COUP DE CŒUR DU PUBLIC"}
             </span>
           )}
-          <p className="team">par {game.team} · {game.genre} · {game.language}</p>
-          <p>{game.description}</p>
-          <h3 style={{ fontFamily: "var(--pixel-font)", fontSize: "0.75rem" }}>Contrôles</h3>
+          <h1 className="cabinet-title">{game.title}</h1>
+          <p className="cabinet-line">
+            <span className="cabinet-label">TEAM</span> {game.team}
+          </p>
+          <p className="cabinet-line">
+            <span className="cabinet-label">GENRE</span> {game.genre}
+            <span className="cabinet-sep">·</span>
+            <span className="cabinet-label">LANG</span> {game.language}
+          </p>
+          <p className="cabinet-desc">{game.description}</p>
+          <h3 className="cabinet-subheading">Contrôles</h3>
           <table className="controls-table">
             <thead>
               <tr><th>Touche</th><th>Action</th></tr>
@@ -51,7 +58,7 @@ export function GamePage() {
               <ReactMarkdown>{game.longDescription}</ReactMarkdown>
             </div>
           )}
-          <p style={{ fontSize: "0.85rem", marginTop: "1rem" }}>
+          <p className="cabinet-source">
             <a
               href={game.repoUrl ?? "https://github.com/BDE-CERI/24h-coder-2026"}
               target="_blank"
