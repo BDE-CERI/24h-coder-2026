@@ -29,7 +29,7 @@ export function GamePage() {
         <aside className="cabinet-card">
           {game.award && (
             <span className={`game-badge game-badge--${game.award}`}>
-              {game.award === "jury" ? "★ PRIX DU JURY" : "♥ COUP DE CŒUR DU PUBLIC"}
+              {game.award === "jury" ? "★ PRIX DU JURY" : "♥ COUP DU PUBLIC"}
             </span>
           )}
           <h1 className="cabinet-title">{game.title}</h1>

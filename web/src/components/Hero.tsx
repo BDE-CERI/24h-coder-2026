@@ -7,7 +7,9 @@ export function Hero({ gameCount }: { gameCount: number }) {
         <img src={LOGO} alt="" className="hero-logo" />
         <div className="hero-copy">
           <p className="hero-kicker">★ PRESS START ★</p>
-          <h1 className="hero-title">Entrez dans l'arcade</h1>
+          <h1 className="hero-title">
+            <span className="glitch" data-text="Entrez dans l'arcade">Entrez dans l'arcade</span>
+          </h1>
           <p className="hero-sub">
             {gameCount} jeu{gameCount > 1 ? "x" : ""} créé{gameCount > 1 ? "s" : ""} en 24 heures.
             Tous jouables dans le navigateur.
