@@ -20,7 +20,11 @@ export function GameCard({ game }: { game: GameMeta }) {
           <div className="game-card-scanlines" aria-hidden="true" />
         </div>
         <div className="game-card-marquee">
-          <h2><span className="marquee-text">{game.title}</span></h2>
+          <h2>
+            <span className="marquee-text">
+              {game.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{game.title}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </span>
+          </h2>
         </div>
         <div className="game-card-body">
           <div className="game-card-meta">

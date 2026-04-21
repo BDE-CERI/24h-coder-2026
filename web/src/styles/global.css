@@ -324,8 +324,8 @@ img.pixel {
 }
 .marquee-text {
   display: inline-block;
-  animation: marquee-scroll 4s linear infinite;
-  padding-right: 3rem;
+  animation: marquee-scroll 5s linear infinite;
+  white-space: nowrap;
 }
 @keyframes marquee-scroll {
   0% { transform: translateX(0); }
@@ -769,17 +769,20 @@ img.pixel {
 
 /* Palmares */
 .palmares-grid {
-  display: flex;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  flex-wrap: wrap;
+  max-width: 800px;
+  margin: 0 auto;
 }
 .palmares-col {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
-  flex: 0 0 260px;
+}
+.palmares-col .game-card {
+  width: 100%;
 }
 .palmares-col-title {
   font-family: var(--body-font);
