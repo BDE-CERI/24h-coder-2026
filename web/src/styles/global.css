@@ -1,14 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Inter:wght@400;600;700&display=swap");
 
 :root {
-  --bg: #0f0f1a;
-  --bg-2: #1a1a2e;
-  --fg: #f2f2f2;
-  --fg-dim: #a0a0b8;
-  --accent: #e94560;
-  --border: #2a2a44;
+  /* Arcade palette */
+  --bg: #07070f;
+  --bg-2: #12122a;
+  --bg-3: #1b1b38;
+  --fg: #f5f3ff;
+  --fg-dim: #9a9ac4;
+  --accent: #ff2e63;        /* neon red/pink */
+  --accent-2: #08d9d6;      /* neon cyan */
+  --accent-3: #ffd166;      /* neon yellow (jury) */
+  --accent-4: #b388ff;      /* neon purple */
+  --border: #2e2e57;
+  --glow-accent: 0 0 12px rgba(255, 46, 99, 0.55);
+  --glow-cyan: 0 0 12px rgba(8, 217, 214, 0.55);
+  --glow-yellow: 0 0 14px rgba(255, 209, 102, 0.6);
+
+  /* Typography */
   --pixel-font: "Press Start 2P", system-ui, monospace;
   --body-font: "Inter", system-ui, sans-serif;
+
+  /* Spacing + radius */
+  --r-sm: 4px;
+  --r-md: 8px;
+  --r-lg: 14px;
+  --bezel: 2px solid var(--border);
 }
 
 * {
@@ -24,6 +40,35 @@ body,
   color: var(--fg);
   font-family: var(--body-font);
   min-height: 100vh;
+}
+
+body {
+  background:
+    radial-gradient(ellipse at top, rgba(179, 136, 255, 0.08), transparent 60%),
+    radial-gradient(ellipse at bottom, rgba(8, 217, 214, 0.06), transparent 60%),
+    var(--bg);
+  background-attachment: fixed;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  background: repeating-linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.025) 0 1px,
+    transparent 1px 3px
+  );
+  z-index: 1;
+  mix-blend-mode: overlay;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
 }
 
 a {
