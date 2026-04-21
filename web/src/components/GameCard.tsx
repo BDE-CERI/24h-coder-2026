@@ -9,11 +9,18 @@ export function GameCard({ game }: { game: GameMeta }) {
           <img
             className="pixel"
             src={`${import.meta.env.BASE_URL}covers/${game.id}.png`}
-            alt={game.title}
+            alt=""
             loading="lazy"
           />
           {game.award && (
-            <span className={`game-badge game-badge--${game.award}`}>
+            <span
+              className={`game-badge game-badge--${game.award}`}
+              aria-label={
+                game.award === "jury"
+                  ? "Award badge: jury selection"
+                  : "Award badge: public choice"
+              }
+            >
               {game.award === "jury" ? "★ JURY" : "♥ PUBLIC"}
             </span>
           )}

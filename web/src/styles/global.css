@@ -267,7 +267,7 @@ img.pixel {
 }
 .game-card-marquee h2 {
   font-family: var(--pixel-font);
-  font-size: 0.7rem;
+  font-size: 0.8rem;
   margin: 0;
   line-height: 1.4;
   color: var(--accent-2);
@@ -284,7 +284,7 @@ img.pixel {
 
 .chip {
   font-family: var(--pixel-font);
-  font-size: 0.55rem;
+  font-size: 0.62rem;
   padding: 0.3rem 0.55rem;
   border-radius: 999px;
   border: 1px solid var(--border);
@@ -301,7 +301,7 @@ img.pixel {
   align-items: center;
   padding: 0.3rem 0.6rem;
   font-family: var(--pixel-font);
-  font-size: 0.55rem;
+  font-size: 0.62rem;
   line-height: 1;
   border-radius: 999px;
   border: 1px solid currentColor;
@@ -315,6 +315,11 @@ img.pixel {
   top: 0.5rem;
   right: 0.5rem;
   z-index: 2;
+}
+.game-page .game-badge {
+  position: static;
+  display: inline-flex;
+  margin-bottom: 0.6rem;
 }
 .game-badge--jury { color: var(--accent-3); text-shadow: var(--glow-yellow); }
 .game-badge--public { color: var(--accent); text-shadow: var(--glow-accent); }
