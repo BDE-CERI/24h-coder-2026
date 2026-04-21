@@ -603,14 +603,14 @@ img.pixel {
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 2rem;
 }
-.palmares-col h3 {
+.palmares-label {
   font-family: var(--pixel-font);
   font-size: 0.8rem;
   margin: 0 0 1rem;
   text-align: center;
 }
-.palmares-col--jury h3 { color: var(--accent-3); text-shadow: var(--glow-yellow); }
-.palmares-col--public h3 { color: var(--accent); text-shadow: var(--glow-accent); }
+.palmares-label--jury { color: var(--accent-3); text-shadow: var(--glow-yellow); }
+.palmares-label--public { color: var(--accent); text-shadow: var(--glow-accent); }
 
 .gallery-grid--tight { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1rem; }
 .gallery-grid--strip { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }

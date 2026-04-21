@@ -17,7 +17,7 @@ export function PalmaresSection({ games }: { games: GameMeta[] }) {
       <div className="palmares-grid">
         {jury.length > 0 && (
           <div className="palmares-col palmares-col--jury">
-            <h3>★ Prix du jury</h3>
+            <p className="palmares-label palmares-label--jury">★ Prix du jury</p>
             <div className="gallery-grid gallery-grid--tight">
               {jury.map((g) => <GameCard key={g.id} game={g} />)}
             </div>
@@ -25,7 +25,7 @@ export function PalmaresSection({ games }: { games: GameMeta[] }) {
         )}
         {publicPick.length > 0 && (
           <div className="palmares-col palmares-col--public">
-            <h3>♥ Coup de cœur du public</h3>
+            <p className="palmares-label palmares-label--public">♥ Coup de cœur du public</p>
             <div className="gallery-grid gallery-grid--tight">
               {publicPick.map((g) => <GameCard key={g.id} game={g} />)}
             </div>
