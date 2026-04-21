@@ -6,11 +6,11 @@
 
 **Phase** : 🟢 MVP fonctionnel local — reste à valider en CI.
 
-**Branche de travail** : `web/v0.1`.
+**Branche de travail** : `v0.3-arcade`.
 
-**Dernière action** : Import des 7 forks de jeux du hackathon 2026 dans des dossiers à la racine. Stubs `game.json` créés pour chaque jeu (champ `build` vide à renseigner). Voir §Import forks 2026-04-21 pour le détail.
+**Dernière action** : Refonte UI rétro-arcade complète du site `web/` — tokens design, shell avec logo lockup, cartes mini-bornes, hero + palmarès conditionnel + featured strip + cabinet wall sur l'accueil, page jeu en cabinet detail, bezel PlayerFrame, focus-visible global.
 
-**Prochaine étape** : Pour chaque nouveau dossier de jeu, renseigner `game.json` (`build`, `title`, `description`, `cover.png`), puis relancer `npm run build:tic` pour générer les exports HTML et vérifier que la galerie affiche toutes les cards.
+**Prochaine étape** : push de la branche, ouvrir une PR vers `main` avec captures d'écran. Valider le rendu en CI/Pages.
 
 ## État du repo (snapshot à la création de ce fichier)
 
@@ -125,6 +125,7 @@ Forks skippés :
 ## Journal des mises à jour
 
 ### Côté App Web
+- **2026-04-21** : Refonte UI rétro-arcade de `web/` (hero + palmarès conditionnel + featured + cabinet wall + cabinet detail). Aucun changement de pipeline ni de schéma `game.json`.
 - **2026-04-20** : Optimisations perf GH Pages. (1) Factorisation `tic80.js`/`tic80.wasm` dans `public/games/_shared/` + patch regex (quotes simples **et** doubles) des chemins dans l'HTML exporté et dans le JS runtime. (2) `#game-frame` auto-caché → le JS TIC-80 démarre le fetch du wasm sans attendre de clic interne. (3) Prefetch des runtimes injecté au mount de `App.tsx`. (4) `Module.onRuntimeInitialized` patché pour `postMessage({ticReady: true})` au parent ; `PlayerFrame` écoute ce message pour masquer le spinner. (5) Préfixe `$` shell dans le `build` array essayé puis retiré (pas grave, `build.fnl` d'Echo-Clone est commité à jour).
 - **2026-04-20** : Workflow CI finalisé : `xvfb-run -a` sur `build:tic` (correctif headless Linux), job `deploy` vers GitHub Pages conditionné à `main`, `concurrency` anti-concurrent. Correctif URL release TIC-80 (`.deb` Linux, pas `.zip`). Docs (SPECS, CLAUDE, STATE) mis à jour pour refléter hosting activé.
 - **2026-04-19** : Implémentation complète des étapes 1, 3-12. Pipeline TIC-80 → exports HTML → galerie React validé en local (3/3 jeux, test de généricité OK avec ajout/retrait d'un 4ᵉ jeu factice). Build prod (`vite build`) passe. Reste : push + valider la CI.
