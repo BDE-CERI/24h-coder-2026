@@ -42,6 +42,8 @@ body,
 }
 
 body {
+  position: relative;
+  isolation: isolate;
   background:
     radial-gradient(ellipse at top, rgba(179, 136, 255, 0.08), transparent 60%),
     radial-gradient(ellipse at bottom, rgba(8, 217, 214, 0.06), transparent 60%),
@@ -59,16 +61,21 @@ body::before {
     rgba(255, 255, 255, 0.025) 0 1px,
     transparent 1px 3px
   );
-  z-index: 1;
+  z-index: 0;
   mix-blend-mode: overlay;
+}
+
+#root {
+  position: relative;
+  z-index: 1;
 }
 
 @media (prefers-reduced-motion: reduce) {
   *,
   *::before,
   *::after {
-    animation-duration: 0.001ms !important;
-    transition-duration: 0.001ms !important;
+    animation: none !important;
+    transition: none !important;
   }
 }
 
