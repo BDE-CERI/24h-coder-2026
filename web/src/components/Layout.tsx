@@ -5,8 +5,9 @@ const LOGO = `${import.meta.env.BASE_URL}logo.png`;
 export function Layout() {
   return (
     <div className="layout">
+      <h1 className="sr-only">24h pour coder 2026</h1>
       <header className="layout-header">
-        <Link to="/" className="brand-lockup" aria-label="Accueil">
+        <Link to="/" className="brand-lockup">
           <img src={LOGO} alt="" className="brand-logo" />
           <span className="brand-text">
             <span className="brand-title">24h pour coder</span>
@@ -28,7 +29,7 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="layout-footer">
-        <span>INSERT COIN · </span>
+        <span className="footer-accent">INSERT COIN · </span>
         <span>Galerie auto-générée à partir des <code>game.json</code> du repo.</span>
       </footer>
     </div>
