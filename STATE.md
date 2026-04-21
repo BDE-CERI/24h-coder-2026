@@ -6,11 +6,11 @@
 
 **Phase** : 🟢 MVP fonctionnel local — reste à valider en CI.
 
-**Branche de travail** : `web/v0.1`.
+**Branche de travail** : `web/v0.2-arcade`.
 
-**Dernière action** : Import des 7 forks de jeux du hackathon 2026 dans des dossiers à la racine. Stubs `game.json` créés pour chaque jeu (champ `build` vide à renseigner). Voir §Import forks 2026-04-21 pour le détail.
+**Dernière action** : Task 2 en cours - remplacement du shell global par une version rétro avec logo lockup, navigation Arcade/GitHub et footer thématique.
 
-**Prochaine étape** : Pour chaque nouveau dossier de jeu, renseigner `game.json` (`build`, `title`, `description`, `cover.png`), puis relancer `npm run build:tic` pour générer les exports HTML et vérifier que la galerie affiche toutes les cards.
+**Prochaine étape** : Vérifier le boot local avec `npm run dev`, puis poursuivre les validations de la galerie si nécessaire.
 
 ## État du repo (snapshot à la création de ce fichier)
 
