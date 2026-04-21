@@ -71,6 +71,14 @@ body::before {
 }
 
 @media (prefers-reduced-motion: reduce) {
+  body {
+    background-attachment: scroll;
+  }
+
+  body::before {
+    display: none;
+  }
+
   *,
   *::before,
   *::after {
