@@ -9,7 +9,7 @@ export function Layout() {
         <Link to="/" className="brand-lockup" aria-label="Accueil">
           <img src={LOGO} alt="" className="brand-logo" />
           <span className="brand-text">
-            <span className="brand-title">24h pour coder</span>
+            <span className="brand-title" data-text="24h pour coder">24h pour coder</span>
             <span className="brand-edition">Édition 2026</span>
           </span>
         </Link>

@@ -2,14 +2,12 @@ import { GAMES } from "../data/games.generated";
 import { GameGrid } from "../components/GameGrid";
 import { Hero } from "../components/Hero";
 import { PalmaresSection } from "../components/PalmaresSection";
-import { FeaturedStrip } from "../components/FeaturedStrip";
 
 export function GalleryPage() {
   return (
     <div className="gallery-page">
       <Hero gameCount={GAMES.length} />
       <PalmaresSection games={GAMES} />
-      <FeaturedStrip games={GAMES} />
       <section id="cabinet-wall" className="cabinet-wall" aria-labelledby="wall-title">
         <header className="section-header">
           <h2 id="wall-title" className="section-title">
