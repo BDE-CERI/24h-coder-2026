@@ -5,7 +5,7 @@ const LOGO = `${import.meta.env.BASE_URL}logo.png`;
 export function Layout() {
   return (
     <div className="layout">
-      <h1 className="sr-only">24h pour coder 2026</h1>
+      <h1 className="layout-heading-visually-hidden">24h pour coder 2026</h1>
       <header className="layout-header">
         <Link to="/" className="brand-lockup">
           <img src={LOGO} alt="" className="brand-logo" />
