@@ -328,6 +328,8 @@ img.pixel {
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .back-link {
@@ -347,7 +349,7 @@ img.pixel {
 
 .game-page {
   display: grid;
-  grid-template-columns: minmax(0, 720px) minmax(320px, 420px);
+  grid-template-columns: minmax(0, 720px) minmax(300px, 1fr);
   gap: 2rem;
   align-items: start;
 }
@@ -527,16 +529,13 @@ img.pixel {
   to { transform: rotate(360deg); }
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 960px) {
   .game-page {
     grid-template-columns: 1fr;
   }
+}
 
-  .game-page-player,
-  .cabinet-card {
-    width: 100%;
-  }
-
+@media (hover: none) and (pointer: coarse) {
   .mobile-warning {
     display: block;
   }
