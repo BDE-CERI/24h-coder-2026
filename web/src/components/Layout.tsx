@@ -1,5 +1,4 @@
 import { Link, Outlet } from "react-router-dom";
-
 const LOGO = `${import.meta.env.BASE_URL}logo.png`;
 
 export function Layout() {
@@ -28,8 +27,7 @@ export function Layout() {
         <Outlet />
       </main>
       <footer className="layout-footer">
-        <span>INSERT COIN · </span>
-        <span>Galerie auto-générée à partir des <code>game.json</code> du repo.</span>
+        <span> · INSERT COIN · </span>
       </footer>
     </div>
   );

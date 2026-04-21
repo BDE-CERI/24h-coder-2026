@@ -50,21 +50,6 @@ body {
   background-attachment: fixed;
 }
 
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  pointer-events: none;
-  background: repeating-linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0.025) 0 1px,
-    transparent 1px 3px
-  );
-  z-index: 1;
-  mix-blend-mode: overlay;
-  animation: scanline-drift 8s linear infinite;
-}
-
 body::after {
   content: "";
   position: fixed;
@@ -77,7 +62,7 @@ body::after {
 
 @keyframes scanline-drift {
   0% { transform: translateY(0); }
-  100% { transform: translateY(3px); }
+  100% { transform: translateY(4px); }
 }
 
 @keyframes vignette-pulse {
@@ -245,16 +230,13 @@ img.pixel {
   0%, 100% { border-color: var(--border); box-shadow: none; }
   50% { border-color: var(--accent-2); box-shadow: 0 0 10px rgba(8, 217, 214, 0.2); }
 }
+.game-card .game-card-cabinet {
+  transition: transform 0.25s ease-out, border-color 0.25s ease-out, box-shadow 0.25s ease-out;
+}
 .game-card:hover .game-card-cabinet,
 .game-card:focus-visible .game-card-cabinet {
-  animation: coin-drop 0.3s ease-out forwards, cabinet-hot 0.3s ease-out forwards;
-}
-@keyframes coin-drop {
-  0% { transform: translateY(0) scale(1); }
-  25% { transform: translateY(-6px) scale(1.02); }
-  55% { transform: translateY(3px) scale(0.99); }
-  75% { transform: translateY(-2px) scale(1.005); }
-  100% { transform: translateY(-3px) scale(1); }
+  transform: translateY(-3px);
+  animation: cabinet-hot 0.3s ease-out forwards;
 }
 @keyframes cabinet-hot {
   0%, 100% { border-color: var(--accent); box-shadow: 0 0 18px rgba(255, 46, 99, 0.5); }
@@ -332,12 +314,13 @@ img.pixel {
   100% { transform: translateX(-50%); }
 }
 
-.game-card-body { padding: 0 0.25rem; }
+.game-card-body { padding: 0 0.25rem; min-height: 4.5rem; }
 
 .game-card-meta {
   display: flex;
   gap: 0.4rem;
   flex-wrap: wrap;
+  align-content: flex-start;
 }
 
 .chip {
@@ -770,10 +753,14 @@ img.pixel {
 /* Palmares */
 .palmares-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 2rem;
-  max-width: 800px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 300px));
+  gap: 1.5rem;
+  justify-content: center;
   margin: 0 auto;
+}
+.gallery-grid {
+  grid-template-columns: repeat(auto-fill, minmax(260px, 300px)) !important;
+  justify-content: center;
 }
 .palmares-col {
   display: flex;
@@ -859,13 +846,23 @@ img.pixel {
   66% { border-color: var(--accent-2); box-shadow: 0 0 20px rgba(8, 217, 214, 0.2); }
 }
 
-/* Scanlines couleur cycle */
-body::before {
-  animation: scanline-drift 8s linear infinite, scanline-color 12s ease-in-out infinite;
+/* Arcade audio toggle button */
+.audio-toggle {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 9999;
+  background: var(--bg-2);
+  border: var(--bezel);
+  border-radius: var(--r-sm);
+  color: var(--accent-2);
+  font-family: var(--pixel-font);
+  font-size: 0.7rem;
+  padding: 0.6rem 0.85rem;
+  cursor: pointer;
+  letter-spacing: 0.1em;
+  text-shadow: var(--glow-cyan);
+  box-shadow: 0 0 12px rgba(8, 217, 214, 0.3);
 }
-@keyframes scanline-color {
-  0%, 100% { opacity: 0.6; }
-  25% { opacity: 1; filter: hue-rotate(0deg); }
-  50% { opacity: 0.7; }
-  75% { opacity: 1; filter: hue-rotate(180deg); }
-}
+.audio-toggle:hover { background: var(--bg-3); box-shadow: 0 0 20px rgba(8, 217, 214, 0.6); }
+.audio-toggle[data-on="true"] { color: var(--accent-3); text-shadow: var(--glow-yellow); box-shadow: 0 0 18px rgba(255, 217, 61, 0.5); }
