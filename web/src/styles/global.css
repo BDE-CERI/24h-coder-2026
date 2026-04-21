@@ -316,11 +316,6 @@ img.pixel {
   right: 0.5rem;
   z-index: 2;
 }
-.game-page .game-badge {
-  position: static;
-  display: inline-flex;
-  margin-bottom: 0.6rem;
-}
 .game-badge--jury { color: var(--accent-3); text-shadow: var(--glow-yellow); }
 .game-badge--public { color: var(--accent); text-shadow: var(--glow-accent); }
 
@@ -391,7 +386,7 @@ img.pixel {
   display: inline-block;
   margin-right: 0.35rem;
   font-family: var(--pixel-font);
-  font-size: 0.58rem;
+  font-size: 0.68rem;
   color: var(--accent-3);
   letter-spacing: 0.08em;
 }
@@ -410,7 +405,7 @@ img.pixel {
 .game-page .game-badge {
   position: static;
   display: inline-flex;
-  margin-bottom: 0.15rem;
+  margin-bottom: 0.6rem;
 }
 
 .cabinet-subheading {
@@ -439,7 +434,7 @@ img.pixel {
 
 .controls-table th {
   font-family: var(--pixel-font);
-  font-size: 0.58rem;
+  font-size: 0.66rem;
   letter-spacing: 0.08em;
   color: var(--accent-3);
 }
@@ -462,7 +457,7 @@ img.pixel {
 .cabinet-source {
   margin: 0;
   font-family: var(--pixel-font);
-  font-size: 0.62rem;
+  font-size: 0.7rem;
   letter-spacing: 0.05em;
   text-transform: uppercase;
 }
@@ -476,6 +471,26 @@ img.pixel {
   color: var(--accent-3);
   font-size: 0.85rem;
   line-height: 1.5;
+}
+
+.player-controls {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.player-controls button {
+  background: var(--bg-2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+}
+
+.player-controls button:hover {
+  border-color: var(--accent);
 }
 
 .player-frame {
@@ -577,14 +592,18 @@ img.pixel {
     font-size: 0.95rem;
   }
 
+  .cabinet-label {
+    font-size: 0.66rem;
+  }
+
   .controls-table th,
   .controls-table td {
     padding: 0.6rem 0.65rem;
-    font-size: 0.82rem;
+    font-size: 0.88rem;
   }
 
   .cabinet-source {
-    font-size: 0.56rem;
+    font-size: 0.68rem;
   }
 }
 
